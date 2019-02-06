@@ -28,6 +28,9 @@ import org.apache.pdfbox.text.PDFTextStripper;
 
 public class App {
 
+    /**
+     * Stash 2
+     **/
     public static void main(String[] args) throws InvalidPasswordException, IOException {
 
         String inputFilePath = "C:/Users/g522257/Downloads/in.gov.uidai-ADHAR-521215359778.pdf";
