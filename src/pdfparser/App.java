@@ -25,9 +25,8 @@ import org.apache.pdfbox.text.PDFTextStripper;
 *
 *
 */
-
 /*
- * Master _branch
+ * Master Branch
  * */
 public class App {
 
