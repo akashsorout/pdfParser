@@ -26,10 +26,6 @@ import org.apache.pdfbox.text.PDFTextStripper;
 *
 */
 
-/**
- * akash_dev Branch
- */
-
 public class App {
 
     public static void main(String[] args) throws InvalidPasswordException, IOException {
