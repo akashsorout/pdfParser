@@ -44,6 +44,7 @@ public class App {
         System.out.println(strpper.getText(doc));
 
         PDPage page = doc.getPage(0);
+        // You a loop or iterator to extract images from all pages of pdf.
 
         PDResources resources = page.getResources();
 
