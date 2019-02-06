@@ -20,6 +20,11 @@ import org.apache.pdfbox.pdmodel.graphics.PDXObject;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 import org.apache.pdfbox.text.PDFTextStripper;
 
+/*
+* A Demo class for using PDFBox. How we can get images and text from a pdf like Aadhar.
+*
+*
+*/
 public class App {
 
     public static void main(String[] args) throws InvalidPasswordException, IOException {
