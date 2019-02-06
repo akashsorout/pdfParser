@@ -24,7 +24,8 @@ public class App {
 
     public static void main(String[] args) throws InvalidPasswordException, IOException {
 
-        File inputFile = new File("C:/Users/g522257/Downloads/in.gov.uidai-ADHAR-521215359778.pdf");
+        String inputFilePath = "C:/Users/g522257/Downloads/in.gov.uidai-ADHAR-521215359778.pdf";
+        File inputFile = new File(inputFilePath);
 
         PDDocument doc = PDDocument.load(inputFile);
 
