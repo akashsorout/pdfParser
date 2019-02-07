@@ -36,33 +36,34 @@ public class App {
 
     public static void main(String[] args) throws InvalidPasswordException, IOException {
 
-        String inputFilePath = "C:/Users/g522257/Downloads/in.gov.uidai-ADHAR-521215359778.pdf";
+        String inputFilePath = "C:/Users/g522257/Downloads/in.gov.uidai-ADHAR-521215359778.pdf"; // path for the input
+                                                                                                 // file.
         File inputFile = new File(inputFilePath);
 
-        PDDocument doc = PDDocument.load(inputFile);
+        PDDocument doc = PDDocument.load(inputFile); // load the file and get PDDocument
 
-        PDDocumentInformation documentInformation = doc.getDocumentInformation();
+        PDDocumentInformation documentInformation = doc.getDocumentInformation(); // Get meta information about
+                                                                                  // document.
 
         documentInformation.getMetadataKeys().stream()
-                .forEach(x -> System.err.println(documentInformation.getPropertyStringValue(x)));
-        // System.err.println(documentInformation.getProducer());
+                .forEach(x -> System.err.println(documentInformation.getPropertyStringValue(x))); // Print all the info.
 
-        PDFTextStripper strpper = new PDFTextStripper();
-        System.out.println(strpper.getText(doc));
+        PDFTextStripper strpper = new PDFTextStripper(); // Get Simple Text from whole of the document.
+        System.out.println(strpper.getText(doc)); // print all the text on console.
 
-        PDPage page = doc.getPage(0);
+        PDPage page = doc.getPage(0); // get first page from the document.
         // You a loop or iterator to extract images from all pages of pdf.
 
-        PDResources resources = page.getResources();
+        PDResources resources = page.getResources(); // Get all the resources from the page.
 
         List<BufferedImage> images = new ArrayList<>();
         resources.getXObjectNames().forEach(x -> {
             try {
                 PDXObject xObject = resources.getXObject(x);
 
-                if (xObject instanceof PDImageXObject) {
+                if (xObject instanceof PDImageXObject) { // check whether it is a image or not.
                     PDImageXObject imgObj = (PDImageXObject) xObject;
-                    BufferedImage image = imgObj.getImage();
+                    BufferedImage image = imgObj.getImage(); // if it is a image then add to List for BufferedImagde.
                     images.add(image);
                 }
 
@@ -73,6 +74,8 @@ public class App {
         });
 
         System.err.println(images.size());
+
+        // Create JFrame for each image and display them.
 
         images.forEach(x -> {
             JFrame frame = new JFrame();
